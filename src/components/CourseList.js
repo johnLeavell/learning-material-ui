@@ -6,8 +6,8 @@ import * as contentful from 'contentful';
 import Course from '../components/Course'
 
 
-const SPACE_ID = '[INSERT CONTENTFUL SPACE ID]'
-const ACCESS_TOKEN = '[INSERT CONTENTFUL ACCESS TOKEN]'
+const SPACE_ID = 'cajq31s578q6'
+const ACCESS_TOKEN = 'RDQl05qsAE2PWeOIOzSQehRWQ7xpYr-Yp7c5acK2rCo'
 const client = contentful.createClient({
     space: SPACE_ID,
     accessToken: ACCESS_TOKEN
@@ -24,7 +24,7 @@ class CoursesList extends React.Component {
 
   getCourses = () => {
     client.getEntries({
-      content_type: 'course',
+      content_type: 'learningMaterialUi',
       query: this.state.searchString
     })
     .then((response) => {
@@ -71,9 +71,9 @@ class CoursesList extends React.Component {
             ))}
             </Grid>
         </div>
-                ) : "No courses found" }
+      ) : "No courses found" }
       </div>
-        )
-    }
+    )
+  }
 }
 export default CoursesList;
